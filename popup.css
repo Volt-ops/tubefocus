@@ -1,0 +1,70 @@
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #15191e;
+  --muted: #5d6772;
+  --line: #dde2e7;
+  --on: #0f8b8d;
+  --off: #b6bfc8;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #13161a;
+    --surface: #1b1f25;
+    --ink: #eef1f4;
+    --muted: #9aa5b1;
+    --line: #2a3038;
+    --on: #3cc2c4;
+    --off: #444c56;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 340px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+}
+h1 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+#status { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; }
+main {
+  margin: 0 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: opacity .15s;
+}
+body.paused main { opacity: .45; pointer-events: none; }
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  cursor: pointer;
+}
+.row + .row { border-top: 1px solid var(--line); }
+.row .text { flex: 1; min-width: 0; }
+.row .title { font-weight: 600; }
+.row .desc { color: var(--muted); font-size: 12px; margin-top: 1px; }
+footer { padding: 10px 16px 14px; color: var(--muted); font-size: 12px; }
+
+.switch { position: relative; display: inline-block; flex: none; width: 38px; height: 22px; }
+.switch input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.track { position: absolute; inset: 0; border-radius: 999px; background: var(--off); transition: background .15s; pointer-events: none; }
+.track::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px;
+  border-radius: 50%; background: #fff; transition: transform .15s;
+}
+.switch input:checked + .track { background: var(--on); }
+.switch input:checked + .track::after { transform: translateX(16px); }
+.switch input:focus-visible + .track { outline: 2px solid var(--on); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

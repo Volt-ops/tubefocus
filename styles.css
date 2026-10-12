@@ -1,0 +1,64 @@
+/* Every rule is gated by an attribute that content.js sets on <html>,
+   so toggling a setting takes effect instantly. */
+
+/* ---------- Home feed ---------- */
+html[data-tf-home] ytd-browse[page-subtype="home"] ytd-rich-grid-renderer,
+html[data-tf-home] ytd-browse[page-subtype="home"] ytd-feed-filter-chip-bar-renderer {
+  display: none !important;
+}
+html[data-tf-home] ytd-browse[page-subtype="home"]::before {
+  content: "Home feed hidden. Search for something to watch.";
+  display: block;
+  text-align: center;
+  padding: 96px 24px;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: var(--yt-spec-text-secondary, #888);
+}
+
+/* ---------- Shorts ---------- */
+html[data-tf-shorts] ytd-reel-shelf-renderer,
+html[data-tf-shorts] ytd-rich-shelf-renderer[is-shorts],
+html[data-tf-shorts] ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html[data-tf-shorts] ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model),
+html[data-tf-shorts] ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2),
+html[data-tf-shorts] grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+html[data-tf-shorts] grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2),
+html[data-tf-shorts] ytm-shorts-lockup-view-model,
+html[data-tf-shorts] ytm-shorts-lockup-view-model-v2,
+html[data-tf-shorts] ytd-video-renderer:has(a[href^="/shorts/"]),
+html[data-tf-shorts] ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+html[data-tf-shorts] ytd-compact-video-renderer:has(a[href^="/shorts/"]),
+html[data-tf-shorts] ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+html[data-tf-shorts] yt-lockup-view-model:has(a[href^="/shorts/"]),
+html[data-tf-shorts] ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html[data-tf-shorts] ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+html[data-tf-shorts] ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html[data-tf-shorts] ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+html[data-tf-shorts] yt-tab-shape[tab-title="Shorts"],
+html[data-tf-shorts] tp-yt-paper-tab:has(a[href$="/shorts"]) {
+  display: none !important;
+}
+
+/* ---------- Up next sidebar ---------- */
+html[data-tf-related] ytd-watch-flexy #related,
+html[data-tf-related] ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+
+/* ---------- Comments ---------- */
+html[data-tf-comments] ytd-comments#comments,
+html[data-tf-comments] ytd-comments {
+  display: none !important;
+}
+
+/* ---------- End screens ---------- */
+html[data-tf-endcards] .ytp-endscreen-content,
+html[data-tf-endcards] .ytp-ce-element,
+html[data-tf-endcards] .ytp-suggestion-set,
+html[data-tf-endcards] .ytp-videowall-still,
+html[data-tf-endcards] .ytp-pause-overlay,
+html[data-tf-endcards] .ytp-endscreen-previous,
+html[data-tf-endcards] .ytp-endscreen-next {
+  display: none !important;
+}
