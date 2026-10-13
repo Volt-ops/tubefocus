@@ -62,3 +62,34 @@ html[data-tf-endcards] .ytp-endscreen-previous,
 html[data-tf-endcards] .ytp-endscreen-next {
   display: none !important;
 }
+
+/* ---------- Notification badge ---------- */
+html[data-tf-notifs] ytd-notification-topbar-button-renderer .yt-spec-icon-badge-shape__badge,
+html[data-tf-notifs] ytd-notification-topbar-button-renderer #notification-count {
+  display: none !important;
+}
+
+/* ---------- Explore and Trending ---------- */
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/feed/trending"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/feed/explore"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/gaming"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/feed/storefront"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/channel/UCEgdi0XIXXZ-qJOFPf4JSKw"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/channel/UCYfdidRxbB8Qhf0Nx7ioOYw"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/channel/UC4R8DWoMoI7CAwX8_LjQHig"]),
+html[data-tf-explore] ytd-guide-entry-renderer:has(a[href="/channel/UCOpNcN46UbXVtpKMrmU4Abg"]),
+html[data-tf-explore] ytd-mini-guide-entry-renderer[aria-label="Trending"] {
+  display: none !important;
+}
+
+/* ---------- Live chat ---------- */
+html[data-tf-livechat] ytd-live-chat-frame,
+html[data-tf-livechat] #chat-container {
+  display: none !important;
+}
+
+/* ---------- Grayscale ---------- */
+html[data-tf-gray] {
+  filter: grayscale(1);
+}

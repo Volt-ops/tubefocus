@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "TubeFocus – YouTube Distraction Remover",
   "short_name": "TubeFocus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Hide YouTube's home feed, Shorts, recommendations, comments and end screens. Keep search and the videos you chose to watch.",
   "permissions": ["storage"],
   "content_scripts": [

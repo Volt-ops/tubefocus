@@ -7,6 +7,10 @@ A tiny browser extension that removes the parts of YouTube designed to keep you 
 - **Up next sidebar**: hidden while you watch
 - **End screens**: no end cards or suggestion grid after a video
 - **Comments**: optional
+- **Notification badge**: hides the red unread count on the bell
+- **Explore and Trending**: removed from the sidebar
+- **Live chat**: optional
+- **Grayscale mode**: makes YouTube black and white
 - Every feature has its own switch. Changes apply instantly with no reload.
 - No tracking, no network requests, no data collected. Settings sync through your browser account.
 
@@ -51,7 +55,7 @@ To make a release zip:
 To publish a release on GitHub, bump `version` in `manifest.json`, then:
 
 ```bash
-git tag v1.0.0 && git push origin v1.0.0
+git tag v1.1.0 && git push origin v1.1.0
 ```
 
 The included GitHub Action builds `tubefocus.zip` and attaches it to a new release.
